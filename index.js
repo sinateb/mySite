@@ -5,10 +5,10 @@ var MongoClient = require('mongodb').MongoClient;
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(request, response) {
+/*app.get('/', function(request, response) {
   response.sendFile(__dirname + '/home.html');
 });
-app.use(express.static(__dirname));
+app.use(express.static(__dirname));*/
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
@@ -38,7 +38,9 @@ MongoClient.connect(url, function(err, db) {
   db.collection('myCollection', function (err, myCollection) {
         myCollection.find().toArray(function(err, items) {
             if(err) throw err;
-           console.log(items);
+           app.get('/',function(req,res){
+                res.send(items);
+             }); 
         });
   db.close();
   });
