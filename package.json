@@ -1,0 +1,22 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "a little test app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.28",
+    "mongoose": "*",
+    "nodemon": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fun"
+  ],
+  "author": "sina",
+  "license": "ISC"
+}
