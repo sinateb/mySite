@@ -5,13 +5,13 @@ var router=express.Router();
 var bodyParser=require('body-parser');
 var mongo=require('mongodb');
 var assert=require('assert');
-
+var port=process.env.port || 3000;
 
 
 //var url='mongodb://localhost/mydb';
 
 
-app.listen(3000,function(){
+app.listen(port,function(){
 console.log('Server running on port 3000');
 });
 app.get('/',function(req,res){
