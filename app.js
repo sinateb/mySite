@@ -10,12 +10,9 @@ var port=process.env.port || 3000;
 //var url='mongodb://localhost/mydb';
 
 
-app.listen(port,function(){
-console.log('Server running on port 3000');
-});
+app.listen(port);
 app.get('/',function(req,res){
-
-        res.sendFile(__dirname + '/index.html');
+     res.sendFile(__dirname + '/index.html');
     });
 app.use(express.static(__dirname));
 /*mongo.connect(url, function(err,db){
