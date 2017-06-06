@@ -33,7 +33,7 @@ var url='mongodb://sinateb:269578@cluster0-shard-00-00-w5m3k.mongodb.net:27017,c
 
     db.close();
 });*/
-/*MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url, function(err, db) {
   console.log("Connected to DB") ;
   db.collection('myCollection', function (err, myCollection) {
         myCollection.find().toArray(function(err, items) {
@@ -42,4 +42,4 @@ var url='mongodb://sinateb:269578@cluster0-shard-00-00-w5m3k.mongodb.net:27017,c
         });
   db.close();
   });
-});*/
+});
