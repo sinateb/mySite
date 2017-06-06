@@ -8,7 +8,7 @@ var assert=require('assert');
 
 
 
-var url='mongodb://localhost/mydb';
+//var url='mongodb://localhost/mydb';
 
 
 app.listen(3000,function(){
