@@ -1,18 +1,18 @@
 
 var express=require('express');
 var app=express();
-var router=express.Router();
-var mongo=require('mongodb');
-var assert=require('assert');
 var port=process.env.port || 3000;
 
 
 //var url='mongodb://localhost/mydb';
 
 
-app.listen(port);
+app.listen(port,function(){
+console.log('Server running on port 3000');
+});
 app.get('/',function(req,res){
-     res.sendFile(__dirname + '/index.html');
+
+        res.sendFile(__dirname + '/index.html');
     });
 app.use(express.static(__dirname));
 /*mongo.connect(url, function(err,db){
