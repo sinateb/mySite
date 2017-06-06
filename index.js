@@ -12,7 +12,8 @@ console.log('Server running on port 3000');
 });
 app.get('/',function(req,res){
 
-        res.sendFile(__dirname + '/index.html');
+       // res.sendFile(__dirname + '/index.html');
+       res.send('hello World')
     });
 app.use(express.static(__dirname));
 /*mongo.connect(url, function(err,db){
