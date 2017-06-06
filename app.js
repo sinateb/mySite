@@ -2,7 +2,6 @@
 var express=require('express');
 var app=express();
 var router=express.Router();
-var bodyParser=require('body-parser');
 var mongo=require('mongodb');
 var assert=require('assert');
 var port=process.env.port || 3000;
