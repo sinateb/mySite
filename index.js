@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var mongo=require('mongodb');
+var MongoClient = require('mongodb').MongoClient;
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -14,16 +15,16 @@ app.listen(app.get('port'), function() {
 });
 
 
-var url='mongodb://localhost/mydb';
+var url="mongodb://sinateb:269578@cluster0-shard-00-00-w5m3k.mongodb.net:27017,cluster0-shard-00-01-w5m3k.mongodb.net:27017,cluster0-shard-00-02-w5m3k.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
 
-mongo.connect(url, function(err,db){
+/*mongo.connect(url, function(err,db){
     if(err) throw err;
     console.log("Connected to DB") 
     db.collection('myCollection', function (err, myCollection) {
         myCollection.find().toArray(function(err, items) {
             if(err) throw err;
             app.get('/',function(req,res){
-                res.send(items[0]);
+                res.send(items);
              }); 
             console.log(items);          
         });
@@ -31,4 +32,7 @@ mongo.connect(url, function(err,db){
     });
 
     db.close();
+});*/
+MongoClient.connect(url, function(err, db) {
+  db.close();
 });
