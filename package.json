@@ -4,10 +4,7 @@
   "description": "a little test app",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "*",
-    "express": "^4.15.3",
-    "mongodb": "^2.2.28",
-    "mongoose": "*",
+    "express": "*",
     "nodemon": "*"
   },
   "devDependencies": {},
