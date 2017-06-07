@@ -1,34 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
+
 </head>
 
-<body>
-
-<!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a>
-  <li><a href="musings.html">Musings</a>
-  <li><a href="town.html">My town</a>
-  <li><a href="links.html">Links</a>
-</ul>
-
-<!-- Main content -->
-<h1>My first styled page</h1>
-
-<p>Welcome to my styled page!
-
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 June 2017<br>
-  by myself.</address>
-
+<body class="body">
+  <div class="registration">
+    <form>
+      <h1>Registration</h1>
+      <label><b>First Name</b></label><br>
+      <input type="text" name="fname" placeholder="Enter Name" required><br>
+      <label><b>Last Name</b></label> <br>
+      <input type="text" name="lname" placeholder="Enter Last Name"><br> 
+      <label><b>Email</b></label><br>
+      <input type="text" name="email" placeholder="Enter Email"><br>
+      <label><b>User Name</b></label> <br>
+      <input type="text" name="user" placeholder="Enter Username"><br>
+      <label><b>Password</b></label> <br>
+      <input type="password" name="user" placeholder="Password"><br>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </form>
+  </div>
+  <div class="login">
+    <form>
+      <h1>Login</h1>
+      <label><b>User Name</b></label> <br>
+      <input type="text" name="password"><br>
+      <label><b>Password</b></label> <br>
+       <input type="password" name="password"><br>
+      <button type="submit" class="loginbtn">Login</button>
+    </form>
+  </div>
 </body>
+
 </html>
