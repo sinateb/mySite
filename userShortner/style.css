@@ -1,0 +1,23 @@
+.body{
+  background-color: green;
+}
+
+input {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 200px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.Submitbtn{
+    color: white;
+    margin: 8px 500px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: left;
+    width: 20%;
+}
