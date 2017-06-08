@@ -51,16 +51,29 @@ app.get('/', function(request, response) {
 app.post('/',urlencodedParser,function(req,res){
     if(!req.body) return res.sendStatus(400);
     var Username=req.body.Username;
+    var Password=req.body.password;
     mongo.connect(url, function(err,db){
     if(err) throw err;
     console.log("Connected to DB") ;
-  db.collection('myCollection').findOne({Username:Username},{Username:Username});
-          
+    
+  db.collection('myCollection',function(err,myCollection){
+    if(err) throw err;
+   myCollection.find({username:Username,password:Password}).toArray(function(err,items){
+       if(err) throw err;
+       if(items.length!=0){
           res.redirect('/userShortner/shortner.html');
-          console.log("1 record found"); 
-          db.close();
+       }          
+       else{
+              res.sendFile(__dirname + '/home.html');
+              console.log('not found');        
+       }
+      
+   });
+          db.close();         
+         });
+      });        
   });
-});
+
 
 app.post('/userShortner/shortner.html',urlencodedParser,function(req,res){
   if(!req.body) return res.sendStatus(400);
