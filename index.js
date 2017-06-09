@@ -7,7 +7,11 @@ var formidable = require('formidable');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var cookieParser = require('cookie-parser');
-
+var GoogleUrl = require( 'google-url' );
+var fs = require('fs');
+var dt = require('./index.js');
+var googleUrl = new GoogleUrl( { key: 'AIzaSyCxGfJytbI-7TDaYU9TIFsOskRZI_CKj_U' });
+var list=[];
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname));
@@ -48,20 +52,21 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/userShortner/shortner.html');
 });
 
-app.post('/',urlencodedParser,function(req,res){
+app.post('/login',urlencodedParser,function(req,res){
     if(!req.body) return res.sendStatus(400);
-    var Username=req.body.Username;
-    var Password=req.body.password;
+    var username=req.body.Username;
+    var password=req.body.password;
     mongo.connect(url, function(err,db){
     if(err) throw err;
     console.log("Connected to DB") ;
     
   db.collection('myCollection',function(err,myCollection){
     if(err) throw err;
-   myCollection.find({username:Username,password:Password}).toArray(function(err,items){
+   myCollection.find({Username:username,Password:password}).toArray(function(err,items){
        if(err) throw err;
        if(items.length!=0){
           res.redirect('/userShortner/shortner.html');
+          console.log(items.length+' items found');
        }          
        else{
               res.sendFile(__dirname + '/home.html');
@@ -74,10 +79,43 @@ app.post('/',urlencodedParser,function(req,res){
       });        
   });
 
+  app.post('/register',urlencodedParser,function(req,response){
+    if(!req.body) return res.sendStatus(400);
+    var Username=req.body.Username;
+    var Password=req.body.password;
+    mongo.connect(url, function(err,db){
+    if(err) throw err;
+    console.log("Connected to DB") ;
+    
+  db.collection('myCollection',function(err,myCollection){
+    if(err) throw err;
+    var fname=req.body.fname;
+    var lname=req.body.lname;
+    var email=req.body.email;
+    var username=req.body.user;
+    var password=req.body.password;  
+    var myobj={firstName:fname,lastName:lname,Email:email,Username:username,Password:password}
+    myCollection.insertOne(myobj,function(err,res){
+       if(err) throw err;
+       console.log("1 record inserted");
+       response.sendFile(__dirname + '/home.html');
+        db.close();
+         });          
+      });
+   });        
+});
+
 
 app.post('/userShortner/shortner.html',urlencodedParser,function(req,res){
   if(!req.body) return res.sendStatus(400);
-    res.redirect('..')
+    var shortner=req.body.shortner;
+    googleUrl.shorten( shortner, function( err, shortUrl ) {
+       if(err) throw err;
+       list=shortUrl;
+       console.log();
+      
+} );
+   
 });
 
 /*mongo.connect(url, function(err,db){
@@ -106,3 +144,7 @@ app.post('/userShortner/shortner.html',urlencodedParser,function(req,res){
           db.close();
         });
   });*/
+
+  function hello(){
+    console.log(list);
+  }

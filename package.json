@@ -16,6 +16,7 @@
     "express": "4.15.2",
     "express-validator": "^3.2.0",
     "formidable": "^1.1.1",
+    "google-url": "0.0.4",
     "mongodb": "*"
   },
   "repository": {
