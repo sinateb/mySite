@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 //Global Vars
 app.use(function(req,res,next){
-res.locals.errors= null;
+res.locals.errors=null;
 next();
 });
 //express validator Middleware
@@ -98,7 +98,6 @@ app.post('/login',function(req,res){
        if(items.length != 0) {
            res.render('shortenLink',{
             link:'links',
-            users:items
            });
          console.log('exist');
          console.log(items);
