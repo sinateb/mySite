@@ -7,7 +7,6 @@ var db = mongojs('mongodb://sinateb:269578@cluster0-shard-00-00-w5m3k.mongodb.ne
 var app = express();
 var GoogleUrl = require( 'google-url' );
 
-
 googleUrl = new GoogleUrl( { key: 'AIzaSyCxGfJytbI-7TDaYU9TIFsOskRZI_CKj_U' });
 
 //set view engine
