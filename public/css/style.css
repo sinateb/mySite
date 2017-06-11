@@ -1,0 +1,17 @@
+body{
+    background-color:green;
+}
+
+.register{
+  background-color:green;
+  width:50%;
+  float:left;
+  height:50%
+}
+
+.login{
+  background-color:green;
+  width:50%;
+  float:right;
+  height:50%;
+}

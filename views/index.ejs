@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<form method="POST" action="/submition" class="register">
+<h1>Sign Up</h1>
+    <label>First Name:</label><br>
+    <input type="text" name="fname"></input><br>
+    <label>Last Name:</label><br>
+    <input type="text" name="lname"></input><br>
+    <label>Email:</label><br>
+    <input type="text" name="email"></input><br>
+    <label>Username:</label><br>
+    <input type="text" name="username"></input><br>
+    <label>Password:</label><br>
+    <input type="password" name="password"></input><br><br>
+    <input type="submit" name="submit" value="submit"></input>
+</form>
+<form method="POST" action="/login" class="login">
+<h1>Sign In</h1>
+    <label>Username:</label><br>
+    <input type="text" name="username"></input><br>
+    <label>Passowrd:</label><br>
+    <input type="password" name="password"></input><br><br>
+    <input type="submit" name="submit" value="submit"></input> <br><br>
+</form>
+<% include partials/footer %>
+        
+
+
