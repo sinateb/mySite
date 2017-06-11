@@ -8,6 +8,10 @@ var app = express();
 var GoogleUrl = require( 'google-url' );
 googleUrl = new GoogleUrl( { key: 'AIzaSyCxGfJytbI-7TDaYU9TIFsOskRZI_CKj_U' });
 
+
+app.set('port', (process.env.PORT || 5000));
+
+
 //set view engine
 
 app.set('view engine','ejs');
@@ -117,6 +121,6 @@ app.post('/shorten',function(req,res){
   });
 });
 
-app.listen(5000, function() {
-  console.log('Node app is running on port 5000 ...');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
