@@ -74,15 +74,15 @@ var newUser = {
    last_name: req.body.lname,
    email: req.body.email,
    username:req.body.username,
-   password: req.body.signpassword,
-   link: ''
+   password: req.body.password,
+   link: 'wwww',
  }
 
  db.myCollection.insert(newUser,function(err,result){
     if(err){
       console.log(err);
     }
-    res.render('/');
+    res.render('index');
  });
 
  console.log('Success');
