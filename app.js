@@ -110,14 +110,11 @@ app.post('/login',function(req,res){
 
 app.post('/shorten',function(req,res){
       url=req.body.link;
-      email=req.body.email; 
       googleUrl.shorten( url , function( err, shortUrl ) {            
       res.render('shortenLink',{
         link:shortUrl,
     });
   });
-   
-  console.log(email);
 });
 
 app.listen(5000, function() {
