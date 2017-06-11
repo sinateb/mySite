@@ -7,7 +7,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/sinateb/mySite.git"
   },
   "keywords": [
     "node",
