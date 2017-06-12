@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname,'public')));
 //Global Vars
 app.use(function(req,res,next){
 res.locals.errors=null;
+res.locals.localusers=null;
 next();
 });
 //express validator Middleware
@@ -94,31 +95,52 @@ app.post('/login',function(req,res){
     
     username=req.body.username;
     password=req.body.password;
-    db.myCollection.find({ $and :[{username:username,password:password}]} ,function(err,items) {
+    db.myCollection.find({ $and :[{username:username,password:password}]},function(err,items) {
        if(items.length != 0) {
            res.render('shortenLink',{
-            link:'links',
            });
          console.log('exist');
-         console.log(items);
        } else{
          res.render('index');
-         console.log('not exist');
-        
+         console.log('not exist');        
        }
     });  
   });
 
-
-
 app.post('/shorten',function(req,res){
       url=req.body.link;
-      googleUrl.shorten( url , function( err, shortUrl ) {            
-      res.render('shortenLink',{
-        link:shortUrl,
+      googleUrl.shorten( url , function( err, shortUrl ) {
+      res.render('save',{
+        link:shortUrl
     });
   });
 });
+
+app.post('/save',function(req,res){
+    
+  var newUser = {
+   username: req.body.username,
+   password: req.body.password,
+   shortUrl: req.body.shortUrl
+ }
+    db.linkUsers.insert(newUser,function(err,result) {
+           if(err){
+      console.log(err);
+    } else{
+       res.render('result',{
+    });
+    console.log('SUCCESS');               
+    }  
+  });
+});
+  app.post('/result',function(req,res){
+    
+    db.linkUsers.find({ $and :[{username:username,password:password}]},function(err,items) {
+           res.render('records',{
+                users:items
+           });  
+    });  
+  });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

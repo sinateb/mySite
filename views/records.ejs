@@ -1,0 +1,10 @@
+<% include partials/header %>
+<form method="POST" class="records">
+    <h1>Your links:</h1><br>
+    <ul>
+    <% users.forEach(function(user){ %>
+    <li><h3><%= user.username %>   <%=  user.shortUrl %></h3></li>
+    <% }) %> 
+</ul>
+ <form>
+<% include partials/footer %>

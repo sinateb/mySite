@@ -1,9 +1,8 @@
 <% include partials/header %>
 <h1>Please enter your link</h1>
-<form method="POST" action="/shorten">
+<form method="POST" action="/shorten" class="shorten">
     <label>LINK:</label><br>
     <input type="text" name="link"></input><br><br>
-    <input type="submit" name="submit" value="submit"></input><br><br>
- <form> 
-  <h1><%= link %><h1>
+    <input type="submit" name="submit" value="shorten" class="shortenbtn"></input><br><br>
+ </form> 
 <% include partials/footer %>

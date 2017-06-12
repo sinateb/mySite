@@ -1,17 +1,120 @@
 .body{
     background-color:green;
+    color:black;
 }
 
 .register{
-  background-color:green;
+  background-color:transparent;
   width:50%;
   float:left;
   height:50%
 }
 
 .login{
-  background-color:green;
+  background-color:transparent;
   width:50%;
   float:right;
   height:50%;
+}
+
+input {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.signupbtn {
+    
+    color: white;
+    margin: 8px 290px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: right;
+    width: 50%;
+    font-size: 17;
+}
+.loginbtn{
+  color: white;
+    margin: 8px 270px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: right;
+    width: 50%;
+    font-size: 17;
+}
+
+.save{
+  background-color:green;
+  width:50%;
+  float:left;
+  height:50%;
+  color:black;
+}
+.records{
+  background-color:green;
+  width:50%;
+  float:left;
+  height:50%;
+  color:black;
+}
+.result{
+  background-color:green;
+  width:50%;
+  float:left;
+  height:50%;
+  color:black;
+}
+
+.shorten{
+  background-color:green;
+  width:50%;
+  float:left;
+  height:50%;
+  color:black;
+}
+
+.shortenbtn {
+    
+    color: white;
+    margin: 8px 290px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: right;
+    width: 50%;
+    font-size: 17;
+}
+
+.savebtn {
+    
+    color: white;
+    margin: 8px 290px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: right;
+    width: 50%;
+    font-size: 17;
+}
+
+.recordsbtn {
+    
+    color: white;
+    margin: 8px 290px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    background-color:black;
+    float: right;
+    width: 50%;
+    font-size: 17;
 }
